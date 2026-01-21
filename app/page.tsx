@@ -221,21 +221,19 @@ export default function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/help" className="hover:text-feli-green">Help Center</Link></li>
                 <li><Link href="/shipping" className="hover:text-feli-green">Shipping Info</Link></li>
-                <li><Link href="/returns" className="hover:text-feli-green">Returns</Link></li>
-                <li><Link href="/faq" className="hover:text-feli-green">FAQ</Link></li>
+               
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-400">
                 <p>Email: support@ProductStore.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Address: 123 Tech Street, City, State 12345</p>
+               
               </div>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 ProductStore Store. All rights reserved.</p>
+            <p>&copy;  All rights reserved.</p>
           </div>
         </div>
       </footer>
