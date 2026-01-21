@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 
-// Types
+
 export interface Column<T> {
   key: string;
   label: string;

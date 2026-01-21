@@ -27,7 +27,6 @@ export default function DashboardPage() {
     }
   };
 
-  // Calculate real statistics from products data
   const products = data?.data || [];
   const totalProducts = data?.pagination?.total || 0;
   const totalRevenue = products.reduce((sum, product) => sum + (product.price * (product.stock || 0)), 0);
@@ -118,7 +117,8 @@ export default function DashboardPage() {
           </Link>
           <Button
             size="sm"
-            variant="destructive"
+            variant="outline"
+            className="text-red-600 hover:text-red-700 hover:bg-red-50"
             onClick={() => handleDelete(product.id)}
           >
             <Trash2 className="h-4 w-4" />
