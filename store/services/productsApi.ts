@@ -1,19 +1,7 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { baseApi } from '../baseApi';
 import type { Product, ApiResponse } from '@/types';
 
-export const productsApi = createApi({
-  reducerPath: 'productsApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api',
-    prepareHeaders: (headers) => {
-      const token = localStorage.getItem('accessToken');
-      if (token) {
-        headers.set('authorization', `Bearer ${token}`);
-      }
-      return headers;
-    },
-  }),
-  tagTypes: ['Products'],
+export const productsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query<ApiResponse<Product[]>, any>({
       query: (params) => ({
@@ -48,7 +36,7 @@ export const productsApi = createApi({
     updateProduct: builder.mutation<ApiResponse<Product>, { id: string; data: Partial<Product> }>({
       query: ({ id, data }) => ({
         url: `/products/${id}`,
-        method: 'PATCH',
+        method: 'PUT',
         body: data,
       }),
       invalidatesTags: ['Products'],
